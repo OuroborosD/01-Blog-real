@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
+    <link rel="stylesheet" href="{% block  css_style %}{% endblock  %}">
+    <title>Document</title>
+</head>
+<body>
+    <header class="topo">
+        <nav class="nav-bar">
+            <ul>
+                <li><a class="link" href="{% url 'index-post' %}">anything blog</a></li>
+                <li><a class="link" href="{% url 'lista-post' %}">posts</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+    {% block conteudo %}{% endblock  %}
+    </main>
+</body>
+</html>
