@@ -8,4 +8,6 @@ class Post(models.Model):
     criacao = models.DateTimeField(auto_now=True)
     autor = models.CharField(max_length=50)
     texto = models.TextField()
+    slug = models.SlugField(default='',null=False,blank=True, db_index=True)
+
     

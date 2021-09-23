@@ -1,1 +1,11 @@
 {% extends 'base.html' %}
+
+
+{% block conteudo  %}
+
+{% for post in posts %}
+    <p><a href="{% url 'post-descricao' post.slug %}"> {{post.title}}</a> </p>
+    <p> {{post.autor}} </p>
+  <textarea name="" id="" cols="50" rows="20"> {{post.texto}} </textarea>
+{% endfor %}
+{% endblock  %}

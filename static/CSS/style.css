@@ -1,0 +1,36 @@
+html, body{
+    margin: 0px;
+    background: rgb(240, 234, 234);
+}
+
+.topo{
+    width: 100%;
+    height: 80px;
+    background: #39507D;
+    display: flex;
+    align-items: center;
+    
+}
+
+.nav-bar{
+    width: 70%;
+    margin: 0px auto;
+}
+ul{
+    display: flex;
+    justify-content: space-between;
+}
+li{
+    flex-direction: column;
+    
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.link{
+    font-size: 26px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    text-transform: capitalize;
+}
