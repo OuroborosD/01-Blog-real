@@ -6,6 +6,8 @@
 {% for post in posts %}
     <p><a href="{% url 'post-descricao' post.slug %}"> {{post.title}}</a> </p>
     <p> {{post.autor}} </p>
+    <p> {{post.criacao|date:"d/m/y "}} </p>
   <textarea name="" id="" cols="50" rows="20"> {{post.texto}} </textarea>
+
 {% endfor %}
 {% endblock  %}

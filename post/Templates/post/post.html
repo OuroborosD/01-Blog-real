@@ -1,5 +1,12 @@
 {% extends 'base.html'  %}
 
 {% block conteudo %}
+    <h1> {{post.title}} </h1>
     <p> {{ post.autor }} </p>
+    {% for i in post_tags %}
+        <p> {{i}} </p>
+    {% endfor %}
+    <p>
+        {{ post.texto }}
+    </p>
 {% endblock %}

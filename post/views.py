@@ -6,8 +6,10 @@ from .models  import Post
 
 def post(request, slug):
     post_descricao = Post.objects.get(slug=slug)
+    tags = post_descricao.tags.all()
     context ={
-        'post':post_descricao
+        'post':post_descricao,
+        'post_tags':tags
     }
     return render(request, 'post/post.html',context)
 
@@ -20,4 +22,4 @@ def index(request):
     return render(request, 'post/index.html', context)
 
 def lista(request):
-    pass
+    return render(request,'post/lista.html')
