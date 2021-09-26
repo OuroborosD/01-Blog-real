@@ -1,5 +1,6 @@
 from django.db import models
 from django.db.models.base import Model
+from django.db.models.deletion import CASCADE
 
 # Create your models here.
 
@@ -21,4 +22,15 @@ class Post(models.Model):
     slug = models.SlugField(default='',null=False,blank=True, db_index=True)
     tags = models.ManyToManyField(Tags, default='S/T')
 
-    
+    def __str__(self) -> str:
+        return self.title
+   
+
+
+class Comentario(models.Model):
+    autor= models.CharField(max_length=50)
+    comentario = models.TextField()
+    post_id = models.ForeignKey(Post, on_delete=CASCADE, null=True)
+
+    def __str__(self) -> str:
+        return self.autor

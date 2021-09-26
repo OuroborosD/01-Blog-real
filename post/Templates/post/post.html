@@ -3,10 +3,27 @@
 {% block conteudo %}
     <h1> {{post.title}} </h1>
     <p> {{ post.autor }} </p>
+      <p> {{ post.pk }} </p>
     {% for i in post_tags %}
         <p> {{i}} </p>
     {% endfor %}
     <p>
         {{ post.texto }}
     </p>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{form}}
+        <button>Enviar comentario</button>
+    </form>
+
+
+    {% for comment in comments %}
+        <div>
+        
+            <h3>{{comment.autor }} </h3>
+            <p> {{comment.comentario}} </p>
+        </div>
+    {% endfor %}
+   
 {% endblock %}
