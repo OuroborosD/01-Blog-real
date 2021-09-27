@@ -1,13 +1,31 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
+{% block css_style %}
+  {% static 'post/CSS/index.css' %}
+{% endblock css_style %}
+
 
 {% block conteudo  %}
 
-{% for post in posts %}
-    <p><a href="{% url 'post-descricao' post.slug %}"> {{post.title}}</a> </p>
-    <p> {{post.autor}} </p>
-    <p> {{post.criacao|date:"d/m/y "}} </p>
-  <textarea name="" id="" cols="50" rows="20"> {{post.texto}} </textarea>
+ 
+    {% for post in posts %}
+      <section class="card">
+        <div class="img-holder">
+           <a href="{% url 'post-descricao' post.slug %}"> 
+            <img src="https://i.imgur.com/izzpeRb.jpeg" alt="default">
+           </a> 
+           
+        </div>
+        <h3><a href="{% url 'post-descricao' post.slug %}"> {{post.title}}</a> </h3>
+          <blockquote>
+            <p>Autor: <span>{{post.autor}}</span>,  em <span>{{post.criacao|date:"d/m/y "}}</span> </p>
+          </p>
+          </blockquote>
+        <p name="" class="texto" id="" cols="50" rows="20"> {{post.texto}} </p>
+      </section>
+    {% endfor %}
 
-{% endfor %}
+
 {% endblock  %}

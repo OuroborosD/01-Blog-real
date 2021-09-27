@@ -1,7 +1,11 @@
 {% extends 'base.html'  %}
 
+{% load static %}
+
+{% block css_style %} {% static "post/CSS/post.css" %}  {% endblock  %}
+
 {% block conteudo %}
-    <h1> {{post.title}} </h1>
+    <h1 class='ola'> {{post.title}} </h1>
     <p> {{ post.autor }} </p>
       <p> {{ post.pk }} </p>
     {% for i in post_tags %}
@@ -20,7 +24,6 @@
 
     {% for comment in comments %}
         <div>
-        
             <h3>{{comment.autor }} </h3>
             <p> {{comment.comentario}} </p>
         </div>
