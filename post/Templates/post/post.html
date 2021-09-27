@@ -15,10 +15,16 @@
         {{ post.texto }}
     </p>
 
-    <form method="POST">
+    <form method="POST" class="form">
         {% csrf_token %}
-        {{form}}
-        <button>Enviar comentario</button>
+        {% for form in forms %}
+                {{ form.label_tag}}
+                {{form}}
+                {{ form.errors }}
+             
+        {% endfor %}
+
+        <button class="enviar" >Enviar comentario</button>
     </form>
 
 
